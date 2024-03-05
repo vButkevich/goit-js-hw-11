@@ -1,0 +1,106 @@
+/*
+@import url('./1-timer.css');
+@import url('./2-snackbar.css');
+*/
+
+:root {
+  --width: 240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.beginers {
+  margin-top: 420px;
+  margin: 0 auto;
+}
+
+form#searchForm {
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+
+  /* margin: 0 auto; */
+  margin: 36px;
+}
+input[type='search'],
+input#searchInput {
+  width: 272px;
+  height: 40px;
+  padding-left: 8px;
+  /* margin: 0 auto; */
+}
+input:invalid ~ span::after {
+  content: '✖';
+  padding-left: 5px;
+  position: absolute;
+}
+
+input:valid ~ span::after {
+  content: '✓';
+  padding-left: 5px;
+  position: absolute;
+}
+button {
+  width: 91px;
+  height: 40px;
+  color: #fff;
+  background-color: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+}
+button:hover {
+  background-color: #6c8cff;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: stretch; */
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ---------------- */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type='text'] {
+  padding: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px;
+}
+
+.card img {
+  max-width: 50%;
+  height: auto;
+}
