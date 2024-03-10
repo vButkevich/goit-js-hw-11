@@ -1,7 +1,6 @@
-// 'use strict';
-
-// import iziToast from 'izitoast';
-// import 'izitoast/dist/css/iziToast.min.css';
+'use strict';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 // // import SimpleLightbox from 'simplelightbox';
 // // import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -29,10 +28,32 @@
     loader.style.display = 'block';
     gallery.innerHTML = '';
 
+    const baseUrl = 'https://pixabay.com/api/';
+    const api_key = '42700764-e859e8fc9280be2dbaa9956c4';
+    const queryParams = {
+      key: api_key,
+      q: searchTerm,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: true,
+    };
+    const queryString = new URLSearchParams(queryParams).toString();
+    const url = `${baseUrl}?${queryString}`;
+    const options = {
+      method: 'GET',
+      // headers: {
+      'Content-Type': 'application/json',
+      //   // Authorization: 'Bearer token123',
+      // },
+    };
+    console.log(url);
     try {
-      const response = await fetch(
-        `https://pixabay.com/api/?key=42700764-e859e8fc9280be2dbaa9956c4&q=${searchTerm}&image_type=photo&orientation=horizontal&safesearch=true`
-      );
+      const response = await fetch(url, options);
+
+      // const response = await fetch(
+      //   `https://pixabay.com/api/?key=${api_key}&q=${searchTerm}&image_type=photo&orientation=horizontal&safesearch=true`
+      // );
+      console.log(typeof response);
       const data = await response.json();
 
       if (data.hits.length === 0) {
