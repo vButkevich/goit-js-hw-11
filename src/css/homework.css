@@ -46,9 +46,7 @@ button:hover {
 
 /* ---------------- */
 .container {
-  /* max-width: 800px; */
   margin: 0 auto;
-  /* padding: 20px; */
   text-align: center;
 }
 
@@ -104,7 +102,6 @@ button:focus {
 
 .gallery-image {
   width: 100%;
-  /* object-fit: cover; */
 }
 .item-info {
   position: absolute;
@@ -112,12 +109,9 @@ button:focus {
   bottom: 0;
   /* opacity: 0.99; */
   width: 100%;
+
   display: flex;
-  /* flex-wrap: nowrap; */
-  /* flex-direction: row; */
   justify-content: space-around;
-  /* align-content: center; */
-  /* align-items: baseline;*/
 }
 .item-title {
   margin-top: 4px;
@@ -139,12 +133,4 @@ button:focus {
 .gallery-item:hover .item-text {
   font-weight: 700;
   font-size: 13px;
-}
-.card {
-  /* margin: 10px; */
-}
-
-.card img {
-  /* max-width: 50%; */
-  height: auto;
 }
