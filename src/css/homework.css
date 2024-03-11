@@ -12,10 +12,11 @@ form#searchForm {
   justify-content: center;
   flex-direction: row;
   gap: 8px;
+
   margin: 36px;
 }
-input[type='search'],
-input#searchInput {
+input#searchInput,
+input[type='search'] {
   width: 272px;
   height: 40px;
   padding-left: 8px;
