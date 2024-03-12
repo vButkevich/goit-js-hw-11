@@ -1,18 +1,26 @@
 'use strict';
+console.log('renderData:v.2.03');
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const renderData = data => {
   const gallery = document.getElementById('gallery');
-  gallery.innerHTML = '';
 
+  gallery.innerHTML = '';
+  if (data.length === 0) {
+    return;
+  }
+
+  /*
+  //test:preview;
   data.forEach(item => {
     const imgElement = document.createElement('img');
     imgElement.src = item.previewURL;
     imgElement.alt = item.tags;
     gallery.appendChild(imgElement);
   });
+  */
 
   let galleryHTML = data
     .map(item => {
@@ -35,9 +43,9 @@ const renderData = data => {
   gallery.innerHTML = `<ul class="gallery">${galleryHTML}</ul>`;
 
   var lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionsData: 'alt',
     // captionPosition: 'bottom',
+    captionsData: 'alt',
+    captionDelay: 250,
   });
 };
 

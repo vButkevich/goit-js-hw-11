@@ -18,6 +18,7 @@ import renderData from './js/render-functions';
     if (searchTerm === '') {
       let message = 'Please enter a search term.';
       iziToast.error({
+        title: 'Error:',
         message: message,
         position: 'topRight',
       });
@@ -31,17 +32,18 @@ import renderData from './js/render-functions';
       console.log('m:hits:', data);
 
       if (data.length === 0) {
-        iziToast.warning({
-          title: 'Warning',
-          message: `main:Sorry, there are no images matching your search query: [${searchTerm}]. Please try again!`,
+        renderData(data);
+        iziToast.error({
+          message: `main: Sorry, there are no images matching your search query: [${searchTerm}]. Please try again!`,
         });
         return;
       }
+
       renderData(data);
     } catch (error) {
       console.error('Error fetching images:', error);
       iziToast.error({
-        title: 'Error',
+        title: 'Error:',
         message:
           'An error occurred while fetching images. Please try again later.',
       });
