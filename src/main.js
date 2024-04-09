@@ -56,7 +56,7 @@ import renderData from './js/render-functions';
       } finally {
         // loaderHide();
         loader.style.display = 'none';
-        form.reset();
+        form.reset(); //clear form
       }
     }, 3333);
     //input.value = '';//clear input;
